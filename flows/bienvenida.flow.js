@@ -21,7 +21,8 @@ const flujoUsuariosNORegistrados = bot
 .addAnswer('Escribe *MENÚ* para mostrarte las opciones disponibles', null, null, [menuFlow])
 
 const bienvenidaFlow = bot
-    .addKeyword(bot.EVENTS.WELCOME)
+    /* .addKeyword(bot.EVENTS.WELCOME) */
+    .addKeyword('chingolo')
     .addAnswer('¡Hola👋🏼! Bienvenido a *Biogreen* 💚')
     .addAnswer('Estoy revisando si estas registrado/a ⌛...', null, async (ctx, {flowDynamic, gotoFlow, state }) => {
 
