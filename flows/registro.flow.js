@@ -1,6 +1,7 @@
 import bot from "@bot-whatsapp/bot";
 import GoogleSheetService from "../services/sheets/index.js";
 import menuFlow from './menu.flow.js';
+import pasosSeguirFlow from "./pasosSeguir.flow.js";
 
 import { regexDNI, validarDNI, regexFechaNacimiento, regexEmail } from '../tools/validaciones.js';
 
@@ -143,7 +144,7 @@ const registroFlow = bot
          await flowDynamic('¡Registro completado! Tus datos han sido guardados en nuestra base de datos.');
      
          // Redirigir al flujo de usuarios registrados
-         await gotoFlow(pasosSeguir);
+         await gotoFlow(pasosSeguirFlow);
  
          /* Dentro del FLUJO, Se les muestra PASOS A SEGUIR y se le envia Lista de Precio y Excel para pedidos. Debes poner el Codigo del producto y la cantidad. 
          Si queres comunicarte con alguien Humano del equipo de Biogreen. Escribe *HUMANO*
