@@ -72,7 +72,8 @@ class GoogleSheetService {
 
     const user = {
       fecha: data.fecha,
-      nombreApellido: data.nombreApellido,
+      apellido: data.apellido,
+      nombre: data.nombre,
       dni: data.dni,
       domicilio: data.domicilio,
       localidad: data.localidad,

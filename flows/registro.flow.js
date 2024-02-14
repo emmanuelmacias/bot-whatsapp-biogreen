@@ -15,27 +15,27 @@ const registroFlow = bot
         'Gracias por querer *SUMARTE* a Biogreen!',
         'Te dejamos unas simples preguntas para poder registrarte. Podés cancelar el registro en cualquier momento escribiendo *CANCELAR*'
     ])
-    .addAnswer('1. Nombre y Apellido', { capture: true }, async (ctx, { flowDynamic, state, endFlow, gotoFlow }) => {
+    .addAnswer('1.Apellido', { capture: true }, async (ctx, { flowDynamic, state, endFlow, gotoFlow }) => {
 
       if(ctx.body.toLowerCase() === "cancelar"){
         await endFlow('¡Has cancelado el registro de Vendedores! Escribe *MENÚ* para volver a ver el menú principal. De lo contrario que tengas un BUEN DÍA.');
       } else{
-        const nombreApellido = ctx.body;
-        state.update({ nombreApellido });
+        const apellido = ctx.body;
+        state.update({ apellido });
+        await flowDynamic('¡Genial! Ahora escribe tu Nombre.');
+      }})
+
+    .addAnswer('2. Nombre/s', { capture: true }, async (ctx, { flowDynamic, state, endFlow }) => {
+
+      if(ctx.body.toLowerCase() === "cancelar"){
+        await endFlow('¡Has cancelado el registro de Vendedores! Escribe *MENÚ* para volver a ver el menú principal. De lo contrario que tengas un BUEN DÍA.');
+      } else{
+        const nombre = ctx.body;
+        state.update({ nombre });
         await flowDynamic('¡Gracias! Ahora necesito tu DNI. Sin puntos (.) separadores');
       }})
 
-/*     .addAnswer('2. DNI', { capture: true }, async (ctx, { flowDynamic, state, endFlow }) => {
-
-      if(ctx.body.toLowerCase() === "cancelar"){
-        await endFlow('¡Has cancelado el registro de Vendedores! Escribe *MENÚ* para volver a ver el menú principal. De lo contrario que tengas un BUEN DÍA.');
-      } else{
-        const dni = ctx.body;
-        state.update({ dni });
-        await flowDynamic('¡Perfecto! Ahora necesito tu fecha de nacimiento.');
-      }}) */
-
-      .addAnswer('2. DNI', { capture: true }, async (ctx, { flowDynamic, state, endFlow, fallBack }) => {
+      .addAnswer('3. DNI', { capture: true }, async (ctx, { flowDynamic, state, endFlow, fallBack }) => {
 
         if (ctx.body.toLowerCase() === "cancelar") {
           await endFlow('¡Has cancelado el registro de Vendedores! Escribe *MENÚ* para volver a ver el menú principal. De lo contrario que tengas un BUEN DÍA.');
@@ -52,7 +52,7 @@ const registroFlow = bot
         }
       })
 
-    .addAnswer('3. Fecha de Nacimiento. Formato de ejemplo: DD/MM/AAAA', { capture: true }, async (ctx, { flowDynamic, state, endFlow, fallBack }) => {
+    .addAnswer('4. Fecha de Nacimiento. Formato de ejemplo: DD/MM/AAAA', { capture: true }, async (ctx, { flowDynamic, state, endFlow, fallBack }) => {
 
       if(ctx.body.toLowerCase() === "cancelar"){
         await endFlow('¡Has cancelado el registro de Vendedores! Escribe *MENÚ* para volver a ver el menú principal. De lo contrario que tengas un BUEN DÍA.');
@@ -69,7 +69,7 @@ const registroFlow = bot
         }
       }})
 
-    .addAnswer('4. Domicilio:', { capture: true }, async (ctx, { flowDynamic, state, endFlow }) => {
+    .addAnswer('5. Domicilio:', { capture: true }, async (ctx, { flowDynamic, state, endFlow }) => {
 
       if(ctx.body.toLowerCase() === "cancelar"){
         await endFlow('¡Has cancelado el registro de Vendedores! Escribe *MENÚ* para volver a ver el menú principal. De lo contrario que tengas un BUEN DÍA.');
@@ -79,7 +79,7 @@ const registroFlow = bot
         await flowDynamic('¡Genial! Ahora necesito tu localidad.');
       }})
 
-    .addAnswer('5. Localidad', { capture: true }, async (ctx, { flowDynamic, state, endFlow }) => {
+    .addAnswer('6. Localidad', { capture: true }, async (ctx, { flowDynamic, state, endFlow }) => {
       if(ctx.body.toLowerCase() === "cancelar"){
         await endFlow('¡Has cancelado el registro de Vendedores! Escribe *MENÚ* para volver a ver el menú principal. De lo contrario que tengas un BUEN DÍA.');
       } else{
@@ -88,7 +88,7 @@ const registroFlow = bot
         await flowDynamic('¡Perfecto! Ahora necesito tu provincia.');
       }})
 
-    .addAnswer('6. Provincia:', { capture: true }, async (ctx, { flowDynamic, state, endFlow }) => {
+    .addAnswer('7. Provincia:', { capture: true }, async (ctx, { flowDynamic, state, endFlow }) => {
       if(ctx.body.toLowerCase() === "cancelar"){
         await endFlow('¡Has cancelado el registro de Vendedores! Escribe *MENÚ* para volver a ver el menú principal. De lo contrario que tengas un BUEN DÍA.');
       } else{
@@ -97,7 +97,7 @@ const registroFlow = bot
         await flowDynamic('¡Muy bien! Por último, necesito tu código postal.');
       }})
 
-    .addAnswer('7. Código Postal:', { capture: true }, async (ctx, { flowDynamic, state, endFlow }) => {
+    .addAnswer('8. Código Postal:', { capture: true }, async (ctx, { flowDynamic, state, endFlow }) => {
 
       if(ctx.body.toLowerCase() === "cancelar"){
         await endFlow('¡Has cancelado el registro de Vendedores! Escribe *MENÚ* para volver a ver el menú principal. De lo contrario que tengas un BUEN DÍA.');
@@ -107,7 +107,7 @@ const registroFlow = bot
         await flowDynamic('¡Casi terminamos! Por favor, proporciona tu dirección de correo electrónico.');
       }})
 
-    .addAnswer('8. Email:', { capture: true }, async (ctx, { flowDynamic, state, endFlow, fallBack, gotoFlow }) => {
+    .addAnswer('9. Email:', { capture: true }, async (ctx, { flowDynamic, state, endFlow, fallBack, gotoFlow }) => {
 
       if(ctx.body.toLowerCase() === "cancelar"){
         await endFlow('¡Has cancelado el registro de Vendedores! Escribe *MENÚ* para volver a ver el menú principal. De lo contrario que tengas un BUEN DÍA.');
@@ -130,7 +130,8 @@ const registroFlow = bot
          // Código para guardar los datos en la base de datos
          await googleSheet.saveUser({
              fecha: new Date().toDateString(),
-             nombreApellido: datosUsuario.nombreApellido,
+             apellido: datosUsuario.apellido,
+             nombre: datosUsuario.nombre,
              dni: datosUsuario.dni,
              domicilio: datosUsuario.domicilio,
              localidad: datosUsuario.localidad,
@@ -146,11 +147,9 @@ const registroFlow = bot
          // Redirigir al flujo de usuarios registrados
          await gotoFlow(pasosSeguirFlow);
  
-         /* Dentro del FLUJO, Se les muestra PASOS A SEGUIR y se le envia Lista de Precio y Excel para pedidos. Debes poner el Codigo del producto y la cantidad. 
+         /* Dentro del FLUJO, Se les muestra PASOS A SEGUIR y se le envia Lista de Precio y Excel para pedidos.
          Si queres comunicarte con alguien Humano del equipo de Biogreen. Escribe *HUMANO*
          */
-
-          
         }
       }})
 
