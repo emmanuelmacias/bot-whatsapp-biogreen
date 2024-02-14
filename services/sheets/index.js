@@ -44,11 +44,11 @@ class GoogleSheetService {
         'Email': ''
       };
 
-      const row = rows.find(row => row._rawData[8] === telefono);
+      const row = rows.find(row => row._rawData[9] === telefono);
 
       if (row) {
-        consultados['Nombre'] = row._rawData[1]; // Nombre en la posición 1
-        consultados['Email'] = row._rawData[7]; // Email en la posición 7
+        consultados['Nombre'] = row._rawData[2]; // Nombre en la posición 2
+        consultados['Email'] = row._rawData[8]; // Email en la posición 8
       } else {
         return false; // Retorna false si no se encuentra el número de teléfono
       }
