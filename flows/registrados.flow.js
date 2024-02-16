@@ -1,4 +1,7 @@
 import bot from "@bot-whatsapp/bot";
+import pasosSeguirFlow from "./pasosSeguir.flow.js";
+import realizarPedidoFlow from "./realizarPedido.flow.js";
+import humanoFlow from "./humano.flow.js";
 
 const regex = '/^9$/'
 
