@@ -16,6 +16,8 @@ import registroFlow from './flows/registro.flow.js';
 import pasosSeguirFlow from "./flows/pasosSeguir.flow.js";
 import humanoFlow from "./flows/humano.flow.js";
 import realizarPedidoFlow from "./flows/realizarPedido.flow.js";
+import registradosFlow from "./flows/registrados.flow.js";
+
 
 const main = async () => {
     const adapterDB = new MockAdapter()
@@ -32,7 +34,8 @@ const main = async () => {
         registroFlow,
         pasosSeguirFlow,
         realizarPedidoFlow,
-        humanoFlow])
+        humanoFlow,
+        registradosFlow])
     const adapterProvider = bot.createProvider(BaileysProvider)
 
     bot.createBot({
