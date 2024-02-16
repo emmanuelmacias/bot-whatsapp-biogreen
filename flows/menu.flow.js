@@ -21,11 +21,13 @@ const menuFlow = bot
             '*5* Sobre los envíos de los pedidos 🚚📦',
             '*6* ¿Cada cuanto tiempo puedo pasar pedidos? 📝',
             '*7* Crecimiento Empresarial 📈',
-            '*8* ¿Querés ingresar como Vendedor/a? 💪🏼'
+            '*8* ¿Querés ingresar como Vendedor/a? 💪🏼',
+            '*9* ¿Ya estas ingresado/a? 📂'
+
         ],
         {capture: true},
         async (ctx, {fallBack}) => {
-            if(!['1','2','3','4','5','6','7','8'].includes(ctx.body)){
+            if(!['1','2','3','4','5','6','7','8','9'].includes(ctx.body)){
                 return fallBack('Por favor selecciona una de las opciones de la Lista');
             }
         },
