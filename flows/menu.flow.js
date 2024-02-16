@@ -8,6 +8,7 @@ import enviosFlow from './envios.flow.js';
 import pedidosFlow from './pedidos.flow.js';
 import empresarialFlow from './empresarial.flow.js';
 import registroFlow from './registro.flow.js';
+import registradosFlow from "./registrados.flow.js";
 
 const menuFlow = bot
     .addKeyword(['menu', 'menú'])
@@ -31,7 +32,7 @@ const menuFlow = bot
                 return fallBack('Por favor selecciona una de las opciones de la Lista');
             }
         },
-        [biogreenFlow, ingresoFlow, gananciasFlow, pagosFlow, enviosFlow, pedidosFlow, empresarialFlow, registroFlow]
+        [biogreenFlow, ingresoFlow, gananciasFlow, pagosFlow, enviosFlow, pedidosFlow, empresarialFlow, registroFlow, registradosFlow]
 )
 
 export default menuFlow;
