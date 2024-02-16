@@ -2,7 +2,7 @@ import bot from "@bot-whatsapp/bot";
 import registroFlow from "./registro.flow.js";
 import menuFlow from "./menu.flow.js";
 
-const regex = ['/^B$/', '/PEDIDO/', '/Pedido', '/pedido/'];
+const regex = '/^B$/';
 
 const realizarPedidoFlow = bot
     .addKeyword(regex, { regex: true })
