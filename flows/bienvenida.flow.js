@@ -11,7 +11,7 @@ const googleSheet = new GoogleSheetService(
 
 
 const flujoUsuariosRegistrados = bot
-.addKeyword(['##_USER_REGISTERED_##', '/^9$/'], { regex: true })
+.addKeyword('##_USER_REGISTERED_##')
 .addAnswer('Por favor ingresa la *LETRA* correspondiente a la consulta:')
 .addAnswer(
     [
