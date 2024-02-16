@@ -15,9 +15,9 @@ const flujoUsuariosRegistrados = bot
 .addAnswer('Por favor ingresa el *número* correspondiente a la consulta:')
 .addAnswer(
     [
-        '*A* Paso a paso de como hacer un pedido 📝',
-        '*B* Realizar un pedido 📦',
-        '*C* Hablar con alguien del equipo de Biogreen 👩🏻‍💻',
+        '*A*. Paso a paso de como hacer un pedido 📝',
+        '*B*. Realizar un pedido 📦',
+        '*C*. Hablar con alguien del equipo de Biogreen 👩🏻‍💻',
     ],
     {capture: true},
     async (ctx, {fallBack}) => {
