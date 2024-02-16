@@ -12,7 +12,7 @@ const googleSheet = new GoogleSheetService(
 
 const flujoUsuariosRegistrados = bot
 .addKeyword('##_USER_REGISTERED_##')
-.addAnswer('Por favor ingresa el *número* correspondiente a la consulta:')
+.addAnswer('Por favor ingresa la *LETRA* correspondiente a la consulta:')
 .addAnswer(
     [
         '*A*. Paso a paso de como hacer un pedido 📝',
@@ -21,7 +21,7 @@ const flujoUsuariosRegistrados = bot
     ],
     {capture: true},
     async (ctx, {fallBack}) => {
-        if(!['/^A$/','/^B$/','/^C$/'].includes(ctx.body)){
+        if(!['A','B','C'].includes(ctx.body)){
             return fallBack('Por favor selecciona una de las opciones de la Lista');
         }
     },
