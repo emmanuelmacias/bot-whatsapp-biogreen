@@ -6,7 +6,7 @@ const googleSheet = new GoogleSheetService(
     "1XC3cVejROpmkfV6IHlqPgmxv7ddBizDQHqXZEwah94w"
   );
 
-  const regex = ['/^A$/', 'pasos', 'PASOS', 'Pasos'];
+  const regex = '/^A$/';
 
   const pasosSeguirFlow = bot
     .addKeyword(regex, { regex: true })
@@ -40,5 +40,5 @@ const googleSheet = new GoogleSheetService(
       'Y Recordarte que por tus compras IGUALES o MAYORES a $85.000 tendrás *EL GASTO del ENVIO* reintegrado con productos, para que al venderlos *RECUPERES EL 100% DE ESE GASTO.*'
     ])
     .addAnswer('Muchas Gracias por sumarte a la familia *Biogreen* 💚. Estamos en contacto!')
-    
+
 export default pasosSeguirFlow;
