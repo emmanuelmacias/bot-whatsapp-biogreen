@@ -2,7 +2,7 @@ import bot from "@bot-whatsapp/bot";
 import registroFlow from "./registro.flow.js";
 import menuFlow from "./menu.flow.js";
 
-const regex = '/^C$/';
+const regex = '/^C$/i';
 
 const humanoFlow = bot
     .addKeyword(regex, { regex: true })

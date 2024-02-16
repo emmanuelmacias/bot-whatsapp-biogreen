@@ -6,7 +6,7 @@ const googleSheet = new GoogleSheetService(
     "1XC3cVejROpmkfV6IHlqPgmxv7ddBizDQHqXZEwah94w"
   );
 
-  const regex = '/^A$/';
+  const regex = '/^A$/i';
 
   const pasosSeguirFlow = bot
     .addKeyword(regex, { regex: true })
