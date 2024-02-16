@@ -4,13 +4,14 @@ import GoogleSheetService from "../services/sheets/index.js";
 import pasosSeguirFlow from "./pasosSeguir.flow.js";
 import realizarPedidoFlow from "./realizarPedido.flow.js";
 import humanoFlow from "./humano.flow.js";
+import registradosFlow from "./registrados.flow.js";
 
 const googleSheet = new GoogleSheetService(
     "1XC3cVejROpmkfV6IHlqPgmxv7ddBizDQHqXZEwah94w"
   );
 
 
-const flujoUsuariosRegistrados = bot
+/* const flujoUsuariosRegistrados = bot
 .addKeyword('##_USER_REGISTERED_##')
 .addAnswer('Por favor ingresa la *LETRA* correspondiente a la consulta:')
 .addAnswer(
@@ -26,7 +27,7 @@ const flujoUsuariosRegistrados = bot
         }
     },
     [pasosSeguirFlow, realizarPedidoFlow, humanoFlow]
-)
+) */
 
 const flujoUsuariosNORegistrados = bot
 .addKeyword('##_USER_NO_REGISTERED_##')
@@ -52,7 +53,7 @@ const bienvenidaFlow = bot
             }else{
                 await flowDynamic(`Bienvenido de nuevo *${consultados.Nombre}*`)
                 await state.update({ name: consultados.Nombre})
-                gotoFlow(flujoUsuariosRegistrados)
+                gotoFlow(registradosFlow)
             }
 
         });
