@@ -34,7 +34,7 @@ const googleSheet = new GoogleSheetService(
       {
         media:'./archivos/PEDIDOS_BIOGREEN_2023.xlsx',
       })
-    .addAnswer('Guardarlo y cuando me vuelvas a escribir te saldrá la opcion para *Realizar un pedido*, sino solo escribe *PEDIDO* en cualquier momento y saldrá la opción.')
+    .addAnswer('Guardarlo y cuando me vuelvas a escribir te saldrá la opcion para *Realizar un pedido*.')
     .addAnswer([
       'LUEGO, elegiremos la forma del ENVÍO, que puede ser por el Correo Argentino, Correo Andreani, Micro, o Comisionista.',
       'Y Recordarte que por tus compras IGUALES o MAYORES a $85.000 tendrás *EL GASTO del ENVIO* reintegrado con productos, para que al venderlos *RECUPERES EL 100% DE ESE GASTO.*'
