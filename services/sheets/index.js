@@ -48,7 +48,7 @@ class GoogleSheetService {
 
       if (row) {
         consultados['Nombre'] = row._rawData[2]; // Nombre en la posición 2
-        consultados['Email'] = row._rawData[8]; // Email en la posición 8
+        consultados['Email'] = row._rawData[9]; // Email en la posición 9
       } else {
         return false; // Retorna false si no se encuentra el número de teléfono
       }
