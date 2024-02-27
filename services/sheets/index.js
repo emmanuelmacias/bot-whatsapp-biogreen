@@ -44,7 +44,7 @@ class GoogleSheetService {
         'Email': ''
       };
 
-      const row = rows.find(row => row._rawData[9] === telefono);
+      const row = rows.find(row => row._rawData[10] === telefono);
 
       if (row) {
         consultados['Nombre'] = row._rawData[2]; // Nombre en la posición 2
@@ -75,6 +75,7 @@ class GoogleSheetService {
       apellido: data.apellido,
       nombre: data.nombre,
       dni: data.dni,
+      fechaNacimiento: data.fechaNacimiento,
       domicilio: data.domicilio,
       localidad: data.localidad,
       provincia: data.provincia,

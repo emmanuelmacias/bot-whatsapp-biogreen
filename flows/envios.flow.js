@@ -5,7 +5,7 @@ const enviosFlow = bot
     .addKeyword(regex, { regex: true })
     .addAnswer('Enviamos por el Correo Argentino o Andreani 📦 y en algunos casos por Comisionista 🚛 o Micros 🚌. Te enviaremos un número de seguimiento correspondiente a tu pedido.')
     .addAnswer(
-    'Por tus compras de *200 PUNTOS* o más, o el equivalente a *$51.000*, sin la Suma de algunos Accesorios de ventas (que no suman puntos), el gasto del Envío o Flete es *REINTEGRADO* con Productos para que al venderlos, recuperes dicho gasto.')
+    'Por tus compras de *200 PUNTOS* o más, o el equivalente a *$96.000*, sin la Suma de algunos Accesorios de ventas (que no suman puntos), el gasto del Envío o Flete es *REINTEGRADO* con Productos para que al venderlos, recuperes dicho gasto.')
     .addAnswer(
         [
             'Escribe el *número* de la consulta si la recordás',

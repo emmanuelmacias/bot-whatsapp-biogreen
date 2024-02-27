@@ -133,6 +133,7 @@ const registroFlow = bot
              apellido: datosUsuario.apellido,
              nombre: datosUsuario.nombre,
              dni: datosUsuario.dni,
+             fechaNacimiento: datosUsuario.fechaNacimiento,
              domicilio: datosUsuario.domicilio,
              localidad: datosUsuario.localidad,
              provincia: datosUsuario.provincia,

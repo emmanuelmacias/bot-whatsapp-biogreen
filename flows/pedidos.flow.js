@@ -4,7 +4,7 @@ const regex = '/^6$/';
 const pedidosFlow = bot
     .addKeyword(regex, { regex: true })
     .addAnswer([
-        'Los podes pasar cuando lo creas conveniente, considerando el ÍTEM anterior, que por tus compras *Iguales o Mayores* a $51.000 te reintegramos el Gasto del Envió.',
+        'Los podes pasar cuando lo creas conveniente, considerando el ÍTEM anterior, que por tus compras *Iguales o Mayores* a $96.000 te reintegramos el Gasto del Envió.',
         'Y aunque podes hacer *Pedidos MENORES* al dicho importe *NO se reintegra* el gasto del envío.'
     ])  
     .addAnswer(
