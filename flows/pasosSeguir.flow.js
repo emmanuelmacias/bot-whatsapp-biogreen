@@ -24,7 +24,7 @@ const googleSheet = new GoogleSheetService(
       '*IMPORTANTE:*',
       'La Planilla de Excel que te voy a enviar a continuación es para pasar tu pedido y así fidelizarte como *Distribuidor/a Oficial.*',
       '',
-      '*Tu Compra Mínima deberá ser de $20.000, Tanto sea con:*',
+      '*Tu Compra Mínima deberá ser de $25.000, Tanto sea con:*',
       '👉 1 Catálogo y/o Productos',
       '👉 1 Kit de trabajo.',
       '👉 o todo lo anterior.',
@@ -37,7 +37,7 @@ const googleSheet = new GoogleSheetService(
     .addAnswer('Guardarlo y cuando me vuelvas a escribir te saldrá la opcion para *Realizar un pedido*.')
     .addAnswer([
       'LUEGO, elegiremos la forma del ENVÍO, que puede ser por el Correo Argentino, Correo Andreani, Micro, o Comisionista.',
-      'Y Recordarte que por tus compras IGUALES o MAYORES a $85.000 tendrás *EL GASTO del ENVIO* reintegrado con productos, para que al venderlos *RECUPERES EL 100% DE ESE GASTO.*'
+      'Y Recordarte que por tus compras IGUALES o MAYORES a $96.000 tendrás *EL GASTO del ENVIO* reintegrado con productos, para que al venderlos *RECUPERES EL 100% DE ESE GASTO.*'
     ])
     .addAnswer('Muchas Gracias por sumarte a la familia *Biogreen* 💚. Estamos en contacto!')
     
