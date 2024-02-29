@@ -4,7 +4,10 @@ import realizarPedidoFlow from "./realizarPedido.flow.js";
 import humanoFlow from "./humano.flow.js";
 
 const regex = '/^9$/';
-const timeoutDuration = 60000; // Duración en milisegundos para el tiempo de espera
+
+const flujoFinal = bot
+.addKeyword(EVENTS.ACTION)
+.addAnswer('Note inactividad en el chat, cuando quieras podés volver a comunicarte. Muchas gracias!');
 
 const registradosFlow = bot
 .addKeyword(regex, { regex: true })
@@ -15,8 +18,13 @@ const registradosFlow = bot
         '*B*. Realizar un pedido 📦',
         '*C*. Hablar con alguien del equipo de Biogreen 👩🏻‍💻',
     ],
-    {capture: true},
-    async (ctx, {fallBack}) => {
+    {capture: true, idle: 5000},
+    async (ctx, {fallBack, gotoFlow, inRef}) => {
+
+        if (ctx?.idleFallBack) {
+            return gotoFlow(flujoFinal);
+        }
+
         if(!['A','B','C', 'a', 'b', 'c'].includes(ctx.body)){
             return fallBack('Por favor selecciona una de las opciones de la Lista');
         }
