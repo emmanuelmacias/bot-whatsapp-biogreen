@@ -6,7 +6,7 @@ import humanoFlow from "./humano.flow.js";
 const regex = '/^9$/';
 
 const flujoFinal = bot
-.addKeyword(EVENTS.ACTION)
+.addKeyword(bot.EVENTS.ACTION)
 .addAnswer('Note inactividad en el chat, cuando quieras podés volver a comunicarte. Muchas gracias!');
 
 const registradosFlow = bot
