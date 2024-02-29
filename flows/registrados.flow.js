@@ -14,9 +14,8 @@ const registradosFlow = bot
         '*B*. Realizar un pedido 📦',
         '*C*. Hablar con alguien del equipo de Biogreen 👩🏻‍💻',
     ],
-    {capture: true, idle: 5000},
+    {capture: true},
     async (ctx, {fallBack}) => {
-
         if(!['A','B','C', 'a', 'b', 'c'].includes(ctx.body)){
             return fallBack('Por favor selecciona una de las opciones de la Lista');
         }

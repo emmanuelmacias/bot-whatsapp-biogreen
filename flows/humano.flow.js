@@ -9,8 +9,8 @@ const humanoFlow = bot
     .addKeyword(regex, { regex: true })
     .addAnswer(
         'Dejame tu consulta por escrito (todo en un solo mensaje) o un audio y alguien del equipo de *Biogreen* te responderá a la brevedad 🦾',
-        {capture: true, idle: 3000},
-        async (ctx, {gotoFlow, inRef}) => {
+        {capture: true, idle: 300000},
+        async (ctx, {gotoFlow}) => {
             if (ctx?.idleFallBack) {
                 return gotoFlow(flujoFinal);
             }
