@@ -8,13 +8,13 @@ const regex = '/^B$/i';
 const realizarPedidoFlow = bot
     .addKeyword(regex, { regex: true })
     .addAnswer('¡Estas en la zona para realizar pedidos!') 
-    .addAnswer('Enviame el archivo de Excel con tu pedido, una vez enviado, nos pondremos en contacto con vos para coordinar la entrega.',
+    .addAnswer('Enviame el archivo de Excel con tu pedido, una vez enviado, nos pondremos en contacto con vos para coordinar la entrega.'/* ,
     {capture: true, idle: 300000},
     async (ctx, {gotoFlow}) => {
         if (ctx?.idleFallBack) {
             return gotoFlow(flujoFinal);
         }
-    })
+    } */)
     
     .addAction({capture: true}, async (ctx, {flowDynamic}) => {
         const respuesta = ctx.body;
