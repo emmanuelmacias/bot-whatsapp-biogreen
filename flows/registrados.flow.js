@@ -16,22 +16,10 @@ const registradosFlow = bot
         '*C*. Hablar con alguien del equipo de Biogreen 👩🏻‍💻',
     ],
     {capture: true},
-    async (ctx, {fallBack, endflow}) => {
-        const timeout = setTimeout(() => {
-            endflow(); // termina flujo por inactividad
-        }, timeoutDuration);
-
+    async (ctx, {fallBack}) => {
         if(!['A','B','C', 'a', 'b', 'c'].includes(ctx.body)){
             return fallBack('Por favor selecciona una de las opciones de la Lista');
         }
-
-        //Reinicia temporizador si hay interaccion del usuario
-        ctx.on ('message', () => {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                endflow(); // termina flujo por inactividad
-            }, timeoutDuration);
-        });
     },
     [pasosSeguirFlow, realizarPedidoFlow, humanoFlow]
 )
