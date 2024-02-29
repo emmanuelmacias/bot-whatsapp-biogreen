@@ -6,7 +6,12 @@ const regex = '/^C$/i';
 
 const humanoFlow = bot
     .addKeyword(regex, { regex: true })
-    .addAnswer('Dejame tu consulta por escrito o un audio y alguien del equipo de *Biogreen* te responderá a la brevedad 🦾') 
+    .addAnswer('Dejame tu consulta por escrito (todo en un solo mensaje) o un audio y alguien del equipo de *Biogreen* te responderá a la brevedad 🦾')
+
+    .addAction({capture: true}, async (ctx, {flowDynamic}) => {
+        const respuesta = ctx.body;
+        return flowDynamic("Tu consulta ya fue enviada al equipo de *Biogreen*. Nos pondremos en contacto con vos. ¡Gracias!");
+    });
 
 export default humanoFlow;
 
