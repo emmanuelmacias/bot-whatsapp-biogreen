@@ -4,7 +4,7 @@ import menuFlow from "./menu.flow.js";
 
 const regex = '/^C$/i';
 
-const humanoFlow = bot
+const catalogoFlow = bot
     .addKeyword(regex, { regex: true })
     .addAnswer('Este es el último *Catálogo de Productos Biogreen* 💚', 
       {
