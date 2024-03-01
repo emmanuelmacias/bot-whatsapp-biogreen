@@ -8,7 +8,7 @@ const catalogoFlow = bot
     .addKeyword(regex, { regex: true })
     .addAnswer('Este es el último *Catálogo de Productos Biogreen* 💚', 
       {
-        media:'./archivos/PEDIDOS_BIOGREEN_2024_V2.xlsx',
+        media:'./archivos/Biogreen_marzo24_arg_Ventas.pdf',
       })
     .addAnswer('Estoy para lo que necesites, cualquier consulta me podés volver a escribir. Saludos! 👋🏻');
 
