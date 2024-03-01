@@ -3,7 +3,7 @@ import registroFlow from "./registro.flow.js";
 import menuFlow from "./menu.flow.js";
 import flujoFinal from "./final.flow.js";
 
-const regex = '/^C$/i';
+const regex = '/^D$/i';
 
 const humanoFlow = bot
     .addKeyword(regex, { regex: true })
